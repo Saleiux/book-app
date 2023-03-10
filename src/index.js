@@ -1,7 +1,6 @@
-const elvenShieldRecipe = {
-    leatherStrips: 2,
-    ironIngot: 1,
-    refinedMoonstone: 4
-}
+import "./styles/main.scss"
 
-console.log(elvenShieldRecipe)
+import "./axios"
+
+
+
