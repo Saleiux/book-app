@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+$background-color:  rgb(15, 210, 232);
+$font-color: darkblue;
+$border: 5px solid black;
+$margin: 10px;
+$padding: 10px;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+// Header
+.box-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    padding: $padding;
+    padding-right: 50px;
+    padding-left: 50px;
+    border-bottom: 4px solid $font-color;
+}
+
+.home {
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    border: 2px solid $font-color;
+}
+
+//body
+.big-container {
+    background-color: $background-color;
+    border-bottom: 4px solid $font-color; ;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 10px;
+}
+
+h3 {
+    text-align: center;
+    padding-bottom: 10px;
+
+}
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 50%;
+    text-align: center;
+
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#btn1,
+#btn2 {
+    background-color: $font-color;
+    color: white;
+    transition-duration: 0.4s;
+    margin: $margin;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+#btn1:hover,
+#btn2:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+
+// Footer
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    padding: $padding; 
+    border-bottom: 4px solid $font-color; 
+}
+
+#link {
+    background-color: $font-color;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+#link:hover {
+    background-color: rgb(15, 210, 232); 
+    color: white;
+    border: 2px solid $font-color;
+    color: $font-color;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+// Books results styling
+#gridLibri {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.divTwo {
+    color: black;
+    padding-bottom: 50px;
+    border-bottom: 4px solid $font-color;
+    padding: $padding;
+
+} 
+
+.container {
+    display: flex;
+}
+
+
+#img-cover {
+    border-radius: 8px;
+    max-width: 20%;
+    max-height: 200px;
+}
+
+.title-container{
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    flex-direction: column;   
+}
+
+#buttonNew {
+    margin: auto;
+    background-color: $font-color;
+    color: white;
+}
+
+#buttonNew:hover,
+#backButton:hover {
+    background-color: rgb(15, 210, 232); 
+    color: white;
+    border: 2px solid $font-color;
+    color: $font-color;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+#backButton {
+    word-wrap: break-word;
+    margin: auto;
+    background-color: $font-color;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 50px;
+}
