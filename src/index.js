@@ -1,23 +1,29 @@
+import axios from "axios";
 
 
 let getBtn = document.getElementById("btn1");
 let search = document.getElementById("search");
-let divOne =  document.getElementById("gridLibri");
+let bigDiv =  document.getElementById("gridLibri");
+
+
+class description {
+  constructor(key) {
+
+    this.key = key;
+  }
+}
+
 
 // call the API
-function getData () {
+function getData (e) {
     let searchValue = search.value;
-    axios ({
-      method: "get",
-      url: "https://openlibrary.org/subjects/'+searchValue.toLowerCase()"
-    })
-    //fetch('https://openlibrary.org/subjects/'+searchValue.toLowerCase()+ '.json')
+    fetch('https://openlibrary.org/subjects/'+searchValue.toLowerCase()+ '.json')
     .then(response => response.json())
     .then (function (response) {
         for (var i=0; i<10; i++) {
           // add the container
             let divTwo = document.createElement('div');
-            divOne.append(divTwo);
+            bigDiv.append(divTwo);
             divTwo.setAttribute("class","divTwo");
             divTwo.style.backgroundColor = 'white';
             let container = document.createElement('div');
@@ -55,9 +61,11 @@ function getData () {
               cover.style.marginBottom = "auto";
             }),
 
+
             // add books descriptions
+            
             btnNew.onclick = function (e) {
-              fetch('https://openlibrary.org'+response.works[i].key+'.json')
+              axios.get ('http://openlibrary.org'+response.works[i].key)
               .then(response=> response.json())
               .then(function(response) {
                 let description = document.createElement('p');
@@ -97,9 +105,4 @@ function getData () {
   
   
 getBtn.addEventListener("click",getData);
-  
- 
-
-
-
 export default getData;
