@@ -51,7 +51,7 @@ The project must satisfy the following requirements:
 
 Live site URL: <a href=""></a>
 <br>
-Source Code:<a "https://github.com/Saleiux/book-app"> GitHub</a> 
+Source Code:<a "https://github.com/Saleiux/book-app.com"> GitHub</a> 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
