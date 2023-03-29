@@ -1,12 +1,21 @@
 import variable from "./styles/main.scss";
-import logoFn from "./img/logo.png";
 import axios from "axios";
+import Icon from './img/icon.png';
 
 let getBtn = document.getElementById("btn1");
 let search = document.getElementById("search");
 let bigDiv =  document.getElementById("gridLibri");
 
+ // Add the image to our existing div.
+ const myIcon = new Image();
+ myIcon.src = Icon;
 
+ document.getElementById("boxContainer")
+ boxContainer.appendChild(myIcon);
+
+ myIcon.style.maxWidth = "100px";
+ myIcon.style.border = "2px solid #0FD2E8";
+ 
 
 // call the API
 const  getData = async () => {
