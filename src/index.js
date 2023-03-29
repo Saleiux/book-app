@@ -1,6 +1,5 @@
 import variable from "./styles/main.scss";
-import logoFn from "./img/logo.png?url";
-import favicon from "./img/favicon.ico";
+import logoFn from "./img/logo.png";
 import axios from "axios";
 
 let getBtn = document.getElementById("btn1");
