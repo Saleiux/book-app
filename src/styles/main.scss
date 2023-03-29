@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 $background-color:  rgb(15, 210, 232);
-$font-color: darkblue;
+$font-color: #0f66e8;
 $border: 5px solid black;
 $margin: 10px;
 $padding: 10px;
@@ -19,7 +19,7 @@ $padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: black;
+    color: $font-color;
     padding: $padding;
     padding-right: 50px;
     padding-left: 50px;
@@ -29,7 +29,6 @@ $padding: 10px;
 .home {
     font-size: 25px;
     text-decoration: none;
-    color: black;
 }
 
 .logo {
@@ -45,11 +44,13 @@ $padding: 10px;
 h1 {
     text-align: center;
     padding-top: 10px;
+    color: $font-color;
 }
 
 h3 {
     text-align: center;
     padding-bottom: 10px;
+    color: $font-color;
 
 }
 
@@ -93,7 +94,7 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: black;
+    color: $font-color;
     padding: $padding; 
     border-bottom: 4px solid $font-color; 
 }
@@ -122,7 +123,6 @@ input {
 }
 
 .divTwo {
-    color: black;
     padding-bottom: 50px;
     border-bottom: 4px solid $font-color;
     padding: $padding;
@@ -146,7 +146,12 @@ input {
 }
 
 .title {
-    flex-direction: column;   
+    flex-direction: column;  
+    color: $font-color; 
+}
+
+.author {
+    font-size: 22px;
 }
 
 #buttonNew {
@@ -157,8 +162,7 @@ input {
 
 #buttonNew:hover,
 #backButton:hover {
-    background-color: rgb(15, 210, 232); 
-    color: white;
+    background-color: $background-color; 
     border: 2px solid $font-color;
     color: $font-color;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -171,12 +175,13 @@ input {
     background-color: $font-color;
     color: white;
     transition-duration: 0.4s;
+    margin-top: 15px;
 }
 
 .description {
     display: flex;
     flex-direction: column;
-    text-align: justify;
-    text-justify: inter-word;
-    margin: 50px;
+    font-size: 15px;
+     margin: 20px;
+     color: black;
 }

@@ -9,36 +9,37 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: black;
+  color: #0f66e8;
   padding: 10px;
   padding-right: 50px;
   padding-left: 50px;
-  border-bottom: 4px solid darkblue;
+  border-bottom: 4px solid #0f66e8;
 }
 
 .home {
   font-size: 25px;
   text-decoration: none;
-  color: black;
 }
 
 .logo {
-  border: 2px solid darkblue;
+  border: 2px solid #0f66e8;
 }
 
 .big-container {
   background-color: #0fd2e8;
-  border-bottom: 4px solid darkblue;
+  border-bottom: 4px solid #0f66e8;
 }
 
 h1 {
   text-align: center;
   padding-top: 10px;
+  color: #0f66e8;
 }
 
 h3 {
   text-align: center;
   padding-bottom: 10px;
+  color: #0f66e8;
 }
 
 .search-box {
@@ -59,7 +60,7 @@ input {
 
 #btn1,
 #btn2 {
-  background-color: darkblue;
+  background-color: #0f66e8;
   color: white;
   transition-duration: 0.4s;
   margin: 10px;
@@ -77,13 +78,13 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: black;
+  color: #0f66e8;
   padding: 10px;
-  border-bottom: 4px solid darkblue;
+  border-bottom: 4px solid #0f66e8;
 }
 
 #link {
-  background-color: darkblue;
+  background-color: #0f66e8;
   color: white;
   transition-duration: 0.4s;
 }
@@ -91,8 +92,8 @@ input {
 #link:hover {
   background-color: #0fd2e8;
   color: white;
-  border: 2px solid darkblue;
-  color: darkblue;
+  border: 2px solid #0f66e8;
+  color: #0f66e8;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -103,9 +104,8 @@ input {
 }
 
 .divTwo {
-  color: black;
   padding-bottom: 50px;
-  border-bottom: 4px solid darkblue;
+  border-bottom: 4px solid #0f66e8;
   padding: 10px;
 }
 
@@ -126,20 +126,24 @@ input {
 
 .title {
   flex-direction: column;
+  color: #0f66e8;
+}
+
+.author {
+  font-size: 22px;
 }
 
 #buttonNew {
   margin: auto;
-  background-color: darkblue;
+  background-color: #0f66e8;
   color: white;
 }
 
 #buttonNew:hover,
 #backButton:hover {
   background-color: #0fd2e8;
-  color: white;
-  border: 2px solid darkblue;
-  color: darkblue;
+  border: 2px solid #0f66e8;
+  color: #0f66e8;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
 }
@@ -147,15 +151,16 @@ input {
 #backButton {
   word-wrap: break-word;
   margin: auto;
-  background-color: darkblue;
+  background-color: #0f66e8;
   color: white;
   transition-duration: 0.4s;
+  margin-top: 15px;
 }
 
 .description {
   display: flex;
   flex-direction: column;
-  text-align: justify;
-  text-justify: inter-word;
-  margin: 50px;
+  font-size: 15px;
+  margin: 20px;
+  color: black;
 }

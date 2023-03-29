@@ -1,26 +1,20 @@
+import variable from "./styles/main.scss";
+import logoFn from "./img/logo.png";
+import favicon from "./img/favicon.ico";
 import axios from "axios";
-
 
 let getBtn = document.getElementById("btn1");
 let search = document.getElementById("search");
 let bigDiv =  document.getElementById("gridLibri");
 
 
-class description {
-  constructor(key) {
-
-    this.key = key;
-  }
-}
-
 
 // call the API
-function getData (e) {
+const  getData = async () => {
     let searchValue = search.value;
-    fetch('https://openlibrary.org/subjects/'+searchValue.toLowerCase()+ '.json')
-    .then(response => response.json())
-    .then (function (response) {
-        for (var i=0; i<10; i++) {
+    const  response  = await axios.get('https://openlibrary.org/search.json?q='+searchValue.toLowerCase() || "https://openlibrary.org/search/authors.json?q="+searchValue.toLowerCase())
+    .then (response => {
+        for (let i=1; i<response.data.numFound; i++) {
           // add the container
             let divTwo = document.createElement('div');
             bigDiv.append(divTwo);
@@ -33,7 +27,7 @@ function getData (e) {
             // add books covers
             let cover = document.createElement('img');
             cover.setAttribute('id','img-cover');
-            cover.setAttribute('src', 'https://covers.openlibrary.org/b/id/'+response.works[i].cover_id+'-M.jpg');
+            cover.setAttribute('src', 'https://covers.openlibrary.org/b/id/'+response.data.docs[i].cover_i+"-M.jpg");
             container.append(cover);
 
             //add books titles and authors
@@ -41,11 +35,11 @@ function getData (e) {
             container.append(titleContainer);
             titleContainer.setAttribute('class','title-container')
             let title = document.createElement('h2');
-            title.innerText = response.works[i].title;
+            title.innerText = response.data.docs[i].title;
             titleContainer.append(title);
             title.setAttribute('class','title');
             let authors = document.createElement('h3');
-            authors.innerText = response.works[i].authors[0].name;
+            authors.innerText = response.data.docs[i].author_name;
             titleContainer.append(authors);
             authors.setAttribute('class','author');
             
@@ -64,18 +58,18 @@ function getData (e) {
 
             // add books descriptions
             
-            btnNew.onclick = function (e) {
-              axios.get ('http://openlibrary.org'+response.works[i].key)
-              .then(response=> response.json())
-              .then(function(response) {
+            btnNew.onclick = async function () {
+              const dscrResp = await axios.get ("https://openlibrary.org/"+response.data.docs[i].key+".json")
+              .then(function(dscrResp) {
                 let description = document.createElement('p');
                 description.setAttribute("class", "description");
-                description.innerHTML = response.description.value;
-                if(response.description.value == undefined) {
-                 description.innerHTML = response.description;
-               
+                description.innerHTML = response.data.description;
+                if(response.data.description === undefined) {
+                 description.innerHTML = "There is no description available for this book";
               }
+        
                 authors.append(description);
+            
 
             // add button for hiding the description 
             let backButton = document.createElement('button');
@@ -93,16 +87,20 @@ function getData (e) {
                 description.style.display = "block";
               }
             }
-            })  
-            .catch(function (error) {
-        alert("You can try to write fantasy on the search box");    
+            }) 
+          .catch(function (error) {
+        console.log(error)
             })
+          }
+          
         }
-      }
       })
-  }
+      }
+
+
+       
 
   
   
-getBtn.addEventListener("click",getData);
+getBtn.addEventListener("click",getData,);
 export default getData;
