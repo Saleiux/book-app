@@ -1,5 +1,5 @@
 import variable from "./styles/main.scss";
-import logoFn from "./img/logo.png";
+import logoFn from "./img/logo.png?url";
 import favicon from "./img/favicon.ico";
 import axios from "axios";
 
