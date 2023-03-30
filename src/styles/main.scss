@@ -110,6 +110,23 @@ input {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+// loading 
+#loading {
+    margin-bottom: 100px;
+    text-align: center;
+    animation-name: loader;
+    position: relative;
+   animation-duration: 30s;
+}
+
+@keyframes loader {
+    0%   {opacity: 1; color:$background-color; left:0px; top:0px;}
+    25%  {color:$font-color; left:200px;}
+    50%  {color:$background-color; left:0px; }
+    75%  {color:$font-color; left:200px;}
+    100% {opacity: 1; color:$background-color; left:0px;}
+  }
+
 
 
 // Books results styling

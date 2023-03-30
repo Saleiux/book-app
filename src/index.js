@@ -5,8 +5,16 @@ import Icon from './img/icon.png';
 let getBtn = document.getElementById("btn1");
 let search = document.getElementById("search");
 let bigDiv =  document.getElementById("gridLibri");
+let loading = document.getElementById("loading");
 
- // Add the image to our existing div.
+
+
+// loading 
+loading.style.display = "none"
+
+
+
+ // Add the image
  const myIcon = new Image();
  myIcon.src = Icon;
 
@@ -19,6 +27,7 @@ let bigDiv =  document.getElementById("gridLibri");
 
 // call the API
 const  getData = async () => {
+  loading.style.display = "block"
   bigDiv.innerHTML = '';
     let searchValue = search.value;
     const  response  = await axios.get('https://openlibrary.org/search.json?q='+searchValue.toLowerCase() || "https://openlibrary.org/search/authors.json?q="+searchValue.toLowerCase())
@@ -32,6 +41,8 @@ const  getData = async () => {
             let container = document.createElement('div');
             divTwo.append(container);
             container.setAttribute('class','container')
+
+            loading.style.display = "none"
             
             // add books covers
             let cover = document.createElement('img');
@@ -40,7 +51,6 @@ const  getData = async () => {
            if(response.data.docs[i].cover_i === undefined) {
               cover.src = 'https://via.placeholder.com/128x192.png?text=No+Cover';
             }
-           
             container.append(cover);
 
             //add books titles and authors
@@ -102,6 +112,7 @@ const  getData = async () => {
                 description.style.display = "block";
               }
             }
+            
             })
           .catch(function (error) {
         console.log(error);
