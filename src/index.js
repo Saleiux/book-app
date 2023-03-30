@@ -19,6 +19,7 @@ let bigDiv =  document.getElementById("gridLibri");
 
 // call the API
 const  getData = async () => {
+  bigDiv.innerHTML = '';
     let searchValue = search.value;
     const  response  = await axios.get('https://openlibrary.org/search.json?q='+searchValue.toLowerCase() || "https://openlibrary.org/search/authors.json?q="+searchValue.toLowerCase())
     .then (response => {
@@ -36,6 +37,10 @@ const  getData = async () => {
             let cover = document.createElement('img');
             cover.setAttribute('id','img-cover');
             cover.setAttribute('src', 'https://covers.openlibrary.org/b/id/'+response.data.docs[i].cover_i+"-M.jpg");
+           if(response.data.docs[i].cover_i === undefined) {
+              cover.src = 'https://via.placeholder.com/128x192.png?text=No+Cover';
+            }
+           
             container.append(cover);
 
             //add books titles and authors
@@ -50,6 +55,11 @@ const  getData = async () => {
             authors.innerText = response.data.docs[i].author_name;
             titleContainer.append(authors);
             authors.setAttribute('class','author');
+            authors.setAttribute('id','author');
+            if (response.data.docs[i].author_name === undefined) {
+             authors.innerText = "Unknown author";
+            }
+           
             
             // add description button
             let btnNew = document.createElement('button');
@@ -63,9 +73,7 @@ const  getData = async () => {
               cover.style.marginBottom = "auto";
             }),
 
-
             // add books descriptions
-            
             btnNew.onclick = async function () {
               const dscrResp = await axios.get ("https://openlibrary.org/"+response.data.docs[i].key+".json")
               .then(function(dscrResp) {
@@ -75,10 +83,9 @@ const  getData = async () => {
                 if(response.data.description === undefined) {
                  description.innerHTML = "There is no description available for this book";
               }
-        
                 authors.append(description);
+    
             
-
             // add button for hiding the description 
             let backButton = document.createElement('button');
             description.append(backButton);
@@ -95,20 +102,18 @@ const  getData = async () => {
                 description.style.display = "block";
               }
             }
-            }) 
-          .catch(function (error) {
-        console.log(error)
             })
+          .catch(function (error) {
+        console.log(error);
+            }) 
           }
-          
+        
         }
+        
       })
       }
 
-
-       
-
   
   
-getBtn.addEventListener("click",getData,);
+getBtn.addEventListener("click",getData);
 export default getData;
