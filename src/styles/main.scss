@@ -114,17 +114,18 @@ input {
 #loading {
     margin-bottom: 100px;
     text-align: center;
-    animation-name: loader;
+    animation-name: loading;
     position: relative;
-   animation-duration: 30s;
+   animation-duration: 40s;
+   color: $font-color;
 }
 
-@keyframes loader {
-    0%   {opacity: 1; color:$background-color; left:0px; top:0px;}
-    25%  {color:$font-color; left:200px;}
-    50%  {color:$background-color; left:0px; }
-    75%  {color:$font-color; left:200px;}
-    100% {opacity: 1; color:$background-color; left:0px;}
+@keyframes loading {
+    0%   {  left:0px; top:0px;}
+    25%  { left:200px;}
+    50%  { left:0px; }
+    75%  { left:200px;}
+    100% { left:0px;}
   }
 
 

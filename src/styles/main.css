@@ -96,33 +96,27 @@ input {
 #loading {
   margin-bottom: 100px;
   text-align: center;
-  animation-name: loader;
+  animation-name: loading;
   position: relative;
-  animation-duration: 30s;
+  animation-duration: 40s;
+  color: #0f66e8;
 }
 
-@keyframes loader {
+@keyframes loading {
   0% {
-    opacity: 1;
-    color: #0fd2e8;
     left: 0px;
     top: 0px;
   }
   25% {
-    color: #0f66e8;
     left: 200px;
   }
   50% {
-    color: #0fd2e8;
     left: 0px;
   }
   75% {
-    color: #0f66e8;
     left: 200px;
   }
   100% {
-    opacity: 1;
-    color: #0fd2e8;
     left: 0px;
   }
 }
