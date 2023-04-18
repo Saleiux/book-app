@@ -137,19 +137,19 @@ input {
     margin-top: 50px;
 }
 
-.divTwo {
+.divBook {
     padding-bottom: 50px;
     border-bottom: 4px solid $font-color;
     padding: $padding;
 
 } 
 
-.container {
+.bookData {
     display: flex;
 }
 
 
-#img-cover {
+.img-cover {
     border-radius: 8px;
     max-width: 20%;
     max-height: 200px;
@@ -169,14 +169,17 @@ input {
     font-size: 22px;
 }
 
-#buttonNew {
+.buttonNew {
     margin: auto;
     background-color: $font-color;
     color: white;
+    padding: $padding;
+    border: 1px solid $font-color;
+    border-radius: 5px;
 }
 
-#buttonNew:hover,
-#backButton:hover {
+.buttonNew:hover,
+.backButton:hover {
     background-color: $background-color; 
     border: 2px solid $font-color;
     color: $font-color;
@@ -184,13 +187,16 @@ input {
     cursor: pointer;
 }
 
-#backButton {
+.backButton {
     word-wrap: break-word;
     margin: auto;
     background-color: $font-color;
     color: white;
     transition-duration: 0.4s;
     margin-top: 15px;
+    padding: $padding;
+    border: 1px solid $font-color;
+    border-radius: 5px;
 }
 
 .description {
